@@ -24,7 +24,7 @@ export default function Home() {
             <footer className='absolute text-gray-300 bottom-2'>
               © {new Date().getFullYear()}{' '}
               <CustomLink href='https://theodorusclarence.com'>
-                Theodorus Clarence
+                VIT Trekking Club
               </CustomLink>
             </footer>
           </div>
