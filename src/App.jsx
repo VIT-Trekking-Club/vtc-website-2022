@@ -3,8 +3,8 @@ import Home from "./components/Home";
 function App() {
   return (
     <>
-      {/* <div>Hello World</div> */}
       <Home />
+      <div>{`Hello World (Just for scroll testing)`}</div>
     </>
   );
 }
