@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { mountainLayer } from "../../animations/variants";
-import Mountain from "../../assets/Mountain.svg";
+import Mountain from "../../assets/Mountain.png";
 
 function MountainLayer() {
   return (
