@@ -15,3 +15,8 @@ export const mountainLayer = {
     type: "spring",
   },
 };
+
+export const textLayer = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+};

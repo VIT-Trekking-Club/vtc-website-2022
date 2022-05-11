@@ -5,25 +5,27 @@ import LinkedInSvg from "../../assets/LinkedIn-Icon.svg";
 import YouTubeSvg from "../../assets/YouTube-Icon.svg";
 import TwitterSvg from "../../assets/Twitter-Icon.svg";
 import MouseSvg from "../../assets/Mouse.svg";
+import { motion } from "framer-motion";
+import { textLayer } from "../../animations/variants";
 
 const NavbarText = ({ children }) => {
-  return <div className="navbar-text">{children}</div>;
+  return <motion.div className="navbar-text">{children}</motion.div>;
 };
 
 const NavbarSvg = ({ children }) => {
-  return <div className="navbar-svg center">{children}</div>;
+  return <motion.div className="navbar-svg center">{children}</motion.div>;
 };
 
 const SocialSvg = ({ children }) => {
-  return <div className="social-svg center">{children}</div>;
+  return <motion.div className="social-svg center">{children}</motion.div>;
 };
 
 const Navbar = () => (
-  <div className="navbar">
+  <motion.div className="navbar">
     {[
       <>
         <NavbarSvg>
-          <img src={MenuButtonSvg} alt="menu button" />
+          <motion.img src={MenuButtonSvg} alt="menu button" />
         </NavbarSvg>
         <NavbarText>Team</NavbarText>
         <NavbarText>Events</NavbarText>
@@ -31,49 +33,65 @@ const Navbar = () => (
       <>
         {" "}
         <NavbarSvg>
-          <img src={LogoSvg} alt="VTC Logo button" />
+          <motion.img src={LogoSvg} alt="VTC Logo button" />
         </NavbarSvg>
       </>,
       <>
         {" "}
         <SocialSvg>
-          <img src={InstagramSvg} alt="instagram" />
+          <motion.img src={InstagramSvg} alt="instagram" />
         </SocialSvg>
         <SocialSvg>
-          <img src={TwitterSvg} alt="twitter" />
+          <motion.img src={TwitterSvg} alt="twitter" />
         </SocialSvg>
         <SocialSvg>
-          <img src={LinkedInSvg} alt="linkedin" />
+          <motion.img src={LinkedInSvg} alt="linkedin" />
         </SocialSvg>
         <SocialSvg>
-          <img src={YouTubeSvg} alt="youtube" />
+          <motion.img src={YouTubeSvg} alt="youtube" />
         </SocialSvg>
       </>,
     ].map((child, index) => (
-      <div className={`navbar-item navbar-item-${index + 1}`} key={index}>
+      <motion.div
+        className={`navbar-item navbar-item-${index + 1}`}
+        key={index}
+      >
         {child}
-      </div>
+      </motion.div>
     ))}
-  </div>
+  </motion.div>
 );
 
 function TextLayer() {
   return (
-    <div className="text-layer layer center">
+    <motion.div
+      initial="initial"
+      animate="animate"
+      transition={{
+        type: "tween",
+        duration: 2,
+        ease: "linear",
+        delay: 1,
+      }}
+      variants={textLayer}
+      className="text-layer layer center"
+    >
       <Navbar />
-      <div className="center main-text">
-        <div className="main-text-heading">THE VIT TREKKING CLUB</div>
-        <p className="main-text-subtext">
+      <motion.div className="center main-text">
+        <motion.div className="main-text-heading">
+          THE VIT TREKKING CLUB
+        </motion.div>
+        <motion.p className="main-text-subtext">
           BE PREPARED FOR THE MOUNTAINS AND BEYOND...
-        </p>
-      </div>
-      <div className="center scroll-text">
-        <div className="scroll-text-1">SCROLL</div>
-        <div className="scroll-text-2">
-          <img src={MouseSvg} alt="mouse" />
-        </div>
-      </div>
-    </div>
+        </motion.p>
+      </motion.div>
+      <motion.div className="center scroll-text">
+        <motion.div className="scroll-text-1">SCROLL</motion.div>
+        <motion.div className="scroll-text-2">
+          <motion.img src={MouseSvg} alt="mouse" />
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }
 
