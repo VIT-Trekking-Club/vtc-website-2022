@@ -4,7 +4,12 @@ import Mountain from "../../assets/Mountain.png";
 
 function MountainLayer() {
   return (
-    <div className="layer mountain-layer-container center">
+    <div style={{
+      flex: 1,
+      flexDirection: "column",
+      justifyContent: "flex-end",
+    }} 
+    className="layer mountain-layer-container center">
       <div
         style={{
           width: "100%",
