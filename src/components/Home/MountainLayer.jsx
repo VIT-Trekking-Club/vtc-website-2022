@@ -4,17 +4,8 @@ import Mountain from "../../assets/Mountain.png";
 
 function MountainLayer() {
   return (
-    <div style={{
-      flex: 1,
-      flexDirection: "column",
-      justifyContent: "flex-end",
-    }} 
-    className="layer mountain-layer-container center">
-      <div
-        style={{
-          width: "100%",
-        }}
-      >
+    <div className="layer mountain-layer-container center flex flex-col justify-end">
+      <div className="w-full">
         <motion.img
           initial="initial"
           animate="animate"
@@ -27,7 +18,6 @@ function MountainLayer() {
           }}
           src={Mountain}
           alt="mountain"
-          width="100%"
         />
       </div>
     </div>
