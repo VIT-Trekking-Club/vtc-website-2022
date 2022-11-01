@@ -12,6 +12,12 @@ const NavbarText = ({ children }) => {
   return <motion.div className="navbar-text">{children}</motion.div>;
 };
 
+const NavbarAnchor = ({ link, text }) => {
+  return <a href={link}>
+    <NavbarText>{text}</NavbarText>
+  </a>
+}
+
 const NavbarSvg = ({ children }) => {
   return <motion.div className="navbar-svg center">{children}</motion.div>;
 };
@@ -27,8 +33,8 @@ const Navbar = () => (
         <NavbarSvg>
           <motion.img src={MenuButtonSvg} alt="menu button" />
         </NavbarSvg>
-        <NavbarText>Team</NavbarText>
-        <NavbarText>Events</NavbarText>
+        <NavbarAnchor link="team" text="Team"/>
+        <NavbarAnchor link="events" text="Events"/>
       </>,
       <>
         {" "}
